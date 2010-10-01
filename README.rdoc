@@ -1,0 +1,36 @@
+= sem_extractor
+SemExtractor is made to have in a single place, wrappers for most of the semantic librairies:
+- Zemanta
+- Semantic Hacker from Textwise
+- Yahoo Boss
+
+Please tell me if there are more API's to include!
+
+After using th gem Term Extraction, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
+Most of the methods below retrieve a hash with 'name' and 'score'
+
+yahoo = SemExtractor::Yahoo.new(:api_key => your_key, :context => your_text)
+yahoo.terms
+
+zemanta = SemExtractor::Zemanta.new(:api_key => your_key, :context => your_text)
+zemanta.terms 
+zemanta.categories
+
+sem = SemExtractor::Textwise.new(:api_key => your_key, :context => your_text_or_url)
+sem.terms
+sem.categories
+sem.filter  #filters the useful content from an url, retrieves text
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 apneadiving. See LICENSE for details.
