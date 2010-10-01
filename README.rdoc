@@ -6,20 +6,21 @@ SemExtractor is made to have in a single place, wrappers for most of the semanti
 
 Please tell me if there are more API's to include!
 
-After using th gem Term Extraction, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
+After using Term Extraction gem, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
 Most of the methods below retrieve a hash with 'name' and 'score'
 
-yahoo = SemExtractor::Yahoo.new(:api_key => your_key, :context => your_text)
-yahoo.terms
+Initialize:
+- yahoo = SemExtractor::Yahoo.new(:api_key => your_key, :context => your_text)
+- zemanta = SemExtractor::Zemanta.new(:api_key => your_key, :context => your_text)
+- sem = SemExtractor::Textwise.new(:api_key => your_key, :context => your_text_or_url)
 
-zemanta = SemExtractor::Zemanta.new(:api_key => your_key, :context => your_text)
-zemanta.terms 
-zemanta.categories
-
-sem = SemExtractor::Textwise.new(:api_key => your_key, :context => your_text_or_url)
-sem.terms
-sem.categories
-sem.filter  #filters the useful content from an url, retrieves text
+Get info:
+- yahoo.terms
+- zemanta.terms 
+- zemanta.categories
+- sem.terms
+- sem.categories
+- sem.filter  #filters the useful content of a web page, retrieves text
 
 == Note on Patches/Pull Requests
  

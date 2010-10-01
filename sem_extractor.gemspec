@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["apneadiving"]
-  s.date = %q{2010-10-01}
+  s.date = %q{2010-10-02}
   s.description = %q{Extracts data from semantics API like zemanta, textwise and yahoo}
   s.email = %q{apnea.diving.deep@gmail.com}
   s.extra_rdoc_files = [
@@ -17,16 +17,16 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
   s.files = [
-    ".document",
-     ".gitignore",
-     "LICENSE",
+    "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "lib/.DS_Store",
      "lib/apis/textwise.rb",
      "lib/apis/yahoo.rb",
      "lib/apis/zemanta.rb",
      "lib/sem_extractor.rb",
+     "pkg/sem_extractor-0.0.0.gem",
      "sem_extractor.gemspec",
      "test/helper.rb",
      "test/test_sem_extractor.rb"
