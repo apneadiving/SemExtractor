@@ -7,6 +7,10 @@ SemExtractor is made to have in a single place, wrappers for most of the semanti
 Please tell me if there are more API's to include!
 
 After using Term Extraction gem, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
+
+To install (I strongly recommend you use RVM):
+gem install sem_extractor
+
 Most of the methods below retrieve a hash with 'name' and 'score'
 
 Initialize:
