@@ -6,36 +6,36 @@ SemExtractor is made to have in a single place, wrappers for most of the semanti
 - Yahoo Boss
 - OpenCalais
 
-= H2 Please tell me if there are more API's to include!
+Please tell me if there are more API's to include!
 
 <em>After using Term Extraction gem, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
 I thank alexrabarts, because his work gave me the idea to create my first gem</em>
 
 == Installation
 
-To install (I strongly recommend you use RVM):
-gem install sem_extractor
+	gem install sem_extractor
 
 
-== Usage
+== Examples
+For sure, you'll have to request your own API Key for each kind of API you want to use.
 Most of the methods below retrieve a hash with 'name' and 'score'
 
-Initialize:
-- yahoo = SemExtractor::Yahoo.new(:api_key => your_key, :context => your_text)
-- zemanta = SemExtractor::Zemanta.new(:api_key => your_key, :context => your_text)
-- sem = SemExtractor::Textwise.new(:api_key => your_key, :context => your_text_or_url)
-- calais = SemExtractor::Calais.new(:api_key => CALAIS, :context => REQUEST)
+=== Initialize:
+	yahoo = SemExtractor::Yahoo.new(:api_key => your_key, :context => your_text)
+	zemanta = SemExtractor::Zemanta.new(:api_key => your_key, :context => your_text)
+	sem = SemExtractor::Textwise.new(:api_key => your_key, :context => your_text_or_url)
+	calais = SemExtractor::Calais.new(:api_key => your_key, :context => your_text)
 
-Get info:
-- yahoo.terms
-- zemanta.terms 
-- zemanta.categories
-- sem.terms
-- sem.categories
-- sem.filter  #filters the useful content of a web page, retrieves text
-- calais.terms
-- calais.categories
-- calais.geos
+===Get info:
+	yahoo.terms
+	zemanta.terms 
+	zemanta.categories
+	sem.terms
+	sem.categories
+	sem.filter  #filters the useful content of a web page, retrieves text
+	calais.terms
+	calais.categories
+	calais.geos
 
 == Note on Patches/Pull Requests
  
