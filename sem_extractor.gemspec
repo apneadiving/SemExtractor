@@ -22,11 +22,13 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/.DS_Store",
+     "lib/apis/calais.rb",
      "lib/apis/textwise.rb",
      "lib/apis/yahoo.rb",
      "lib/apis/zemanta.rb",
      "lib/sem_extractor.rb",
      "pkg/sem_extractor-0.0.0.gem",
+     "pkg/sem_extractor-0.0.1.gem",
      "sem_extractor.gemspec",
      "test/helper.rb",
      "test/test_sem_extractor.rb"

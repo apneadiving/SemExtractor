@@ -1,9 +1,11 @@
-require 'nokogiri'
-require 'open-uri'
-require 'uri'
-
 class SemExtractor
   class Textwise < SemExtractor
+    #I kept here methods instead of variables because,each one leads to a http call
+   
+    def initialize(options={})
+      self.set(options)
+    end
+    
     def terms
       @options = { 'content' => @context }
       get_entity
@@ -24,7 +26,6 @@ class SemExtractor
     def match
       @type = 'match/rsscombined'
       @options = {'content' => @context }
-      puts remote_xml
     end
     
     def get_entity

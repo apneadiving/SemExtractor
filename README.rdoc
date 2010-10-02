@@ -1,22 +1,30 @@
-= sem_extractor
+== SemExtractor
+
 SemExtractor is made to have in a single place, wrappers for most of the semantic librairies:
 - Zemanta
 - Semantic Hacker from Textwise
 - Yahoo Boss
+- OpenCalais
 
-Please tell me if there are more API's to include!
+= H2 Please tell me if there are more API's to include!
 
-After using Term Extraction gem, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
+<em>After using Term Extraction gem, I happened to need the score of the different tags I got from the different APIS + I wanted to use Nokogiri for performance concerns.
+I thank alexrabarts, because his work gave me the idea to create my first gem</em>
+
+== Installation
 
 To install (I strongly recommend you use RVM):
 gem install sem_extractor
 
+
+== Usage
 Most of the methods below retrieve a hash with 'name' and 'score'
 
 Initialize:
 - yahoo = SemExtractor::Yahoo.new(:api_key => your_key, :context => your_text)
 - zemanta = SemExtractor::Zemanta.new(:api_key => your_key, :context => your_text)
 - sem = SemExtractor::Textwise.new(:api_key => your_key, :context => your_text_or_url)
+- calais = SemExtractor::Calais.new(:api_key => CALAIS, :context => REQUEST)
 
 Get info:
 - yahoo.terms
@@ -25,6 +33,9 @@ Get info:
 - sem.terms
 - sem.categories
 - sem.filter  #filters the useful content of a web page, retrieves text
+- calais.terms
+- calais.categories
+- calais.geos
 
 == Note on Patches/Pull Requests
  
@@ -35,6 +46,9 @@ Get info:
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
+
+== Todo
+I've to create the tests for this gem... :)
 
 == Copyright
 

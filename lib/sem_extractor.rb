@@ -1,13 +1,18 @@
-class SemExtractor
-  attr_accessor :context, :api_key, :categories
+require 'nokogiri'
+require 'uri'
+require 'net/http'
+require 'open-uri'
 
-  def initialize(options={})
+class SemExtractor
+  attr_accessor :context, :api_key, :categories, :terms, :geos
+
+  def set(options={})
     @context = options[:context]
     @api_key = options[:api_key]
     @type = options[:type]
-    @categories = nil
+    @categories, @terms, @geos, @relations = Array.new, Array.new, Array.new, Array.new
   end
 
 end
 
-%w{yahoo zemanta textwise}.each{|t| require "apis/#{t}"}
+%w{yahoo zemanta textwise calais}.each{|t| require "apis/#{t}"}

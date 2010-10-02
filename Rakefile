@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "sem_extractor"
-    gem.summary = %Q{Extracts data from semantics API like zemanta, textwise and yahoo}
-    gem.description = %Q{Extracts data from semantics API like zemanta, textwise and yahoo}
+    gem.summary = %Q{Extracts data from semantics APIs: zemanta, textwise, opencalais and yahoo}
+    gem.description = %Q{Extracts data from semantics APIs: zemanta, textwise, opencalais and yahoo}
     gem.email = "apnea.diving.deep@gmail.com"
     gem.homepage = "http://github.com/apneadiving/sem_extractor"
     gem.authors = ["apneadiving"]

@@ -1,15 +1,8 @@
-require 'nokogiri'
-require 'open-uri'
-require 'uri'
-
 class SemExtractor
  class Yahoo < SemExtractor
-    def terms
-      begin
-        Nokogiri::XML(remote_xml).css('Result').map { |h| {"name" => h.content} }
-      rescue
-        []
-      end
+    def initialize(options={})
+     self.set(options)
+     @terms = Nokogiri::XML(remote_xml).css('Result').map { |h| {"name" => h.content} }
     end
 
     def uri

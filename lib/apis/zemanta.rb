@@ -1,24 +1,13 @@
-require 'nokogiri'
-require 'net/http'
-require 'uri'
-
 class SemExtractor
   class Zemanta < SemExtractor
     
-    def terms
-      begin
-        @categories = Nokogiri::XML(remote_xml).css('category').map { |h|  {"score" => h.css('confidence').first.content, "name" => h.css('name').first.content} }
-        Nokogiri::XML(remote_xml).css('keyword').map { |h|  {"score" => h.css('confidence').first.content, "name" => h.css('name').first.content} }
-      rescue
-        []
-      end
+    def initialize(options={})
+      self.set(options)
+      xml = remote_xml
+      @categories = Nokogiri::XML(xml).css('category').map { |h|  {"score" => h.css('confidence').first.content, "name" => h.css('name').first.content} }
+      @terms = Nokogiri::XML(xml).css('keyword').map { |h|  {"score" => h.css('confidence').first.content, "name" => h.css('name').first.content} }
     end
     
-    def categories
-      terms if @categories == nil
-      return @categories
-    end
-
     def uri
       URI.parse(gateway)
     end
