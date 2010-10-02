@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "lib/sem_extractor.rb",
      "pkg/sem_extractor-0.0.0.gem",
      "pkg/sem_extractor-0.0.1.gem",
+     "pkg/sem_extractor-0.0.2.gem",
      "sem_extractor.gemspec",
      "test/helper.rb",
      "test/test_sem_extractor.rb"

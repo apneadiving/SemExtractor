@@ -6,17 +6,16 @@ class SemExtractor
         Nokogiri::XML(remote_xml).xpath('//rdf:Description').map { |h|  
           node_type = h.xpath('rdf:type').first['resource']
           if node_type.include?('/type/cat/')
-            @categories << { "name" => h.xpath('c:categoryName').first.content, "score"=>h.xpath('c:score').first.content}
+            @categories << { "name" => sanitize(h.xpath('c:categoryName')), "score"=> sanitize(h.xpath('c:score'))}
           elsif node_type.include?('/type/em/')
-            nationality = h.xpath('c:nationality').first.nil? ? 'N/A' : h.xpath('c:nationality').first.content
-            @terms << { "name" => h.xpath('c:name').first.content, "score" => nil, "nationality" => nationality }
+            @terms << { "name" => sanitize(h.xpath('c:name')), "score" => nil, "nationality" => sanitize(h.xpath('c:nationality')) }
           elsif node_type.include?('/type/sys/InstanceInfo')
             #nothing to do, no info to take
           elsif node_type.include?('/type/sys/RelevanceInfo')
             # I assume here, Open Calais will keep on giving information in the proper order, seems fair :)
-            @terms.last["score"] = h.xpath('c:relevance').first.content
+            @terms.last["score"] = sanitize(h.xpath('c:relevance'))
           elsif node_type.include?('/Geo/')
-            @geos <<{ "name" => h.xpath('c:name').first.content } 
+            @geos <<{ "name" => sanitize(h.xpath('c:name')) } 
           end
           }
       end
@@ -33,6 +32,10 @@ class SemExtractor
     end
 
   private
+      def sanitize(item)
+        item.first.nil? ? 'N/A' : item.first.content 
+      end
+      
       def gateway
         'http://api.opencalais.com/enlighten/rest/'
       end
