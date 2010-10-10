@@ -8,7 +8,7 @@ begin
     gem.summary = %Q{Extracts data from semantics APIs: zemanta, textwise, opencalais and yahoo}
     gem.description = %Q{Extracts data from semantics APIs: zemanta, textwise, opencalais and yahoo}
     gem.email = "apnea.diving.deep@gmail.com"
-    gem.homepage = "http://github.com/apneadiving/sem_extractor"
+    gem.homepage = "http://github.com/apneadiving/SemExtractor"
     gem.authors = ["apneadiving"]
     gem.add_dependency "nokogiri", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings

@@ -1,6 +1,6 @@
 class SemExtractor
   class Textwise < SemExtractor
-    #I kept here methods instead of variables because,each one leads to a http call
+    #I kept methods here instead of variables because,each one leads to a http call
    
     def initialize(options={})
       self.set(options)

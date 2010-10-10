@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sem_extractor}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["apneadiving"]
-  s.date = %q{2010-10-02}
+  s.date = %q{2010-10-10}
   s.description = %q{Extracts data from semantics APIs: zemanta, textwise, opencalais and yahoo}
   s.email = %q{apnea.diving.deep@gmail.com}
   s.extra_rdoc_files = [
@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
      "test/helper.rb",
      "test/test_sem_extractor.rb"
   ]
-  s.homepage = %q{http://github.com/apneadiving/sem_extractor}
+  s.homepage = %q{http://github.com/apneadiving/SemExtractor}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}

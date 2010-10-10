@@ -4,8 +4,8 @@ class SemExtractor
     def initialize(options={})
       self.set(options)
       xml = remote_xml
-      @categories = Nokogiri::XML(xml).css('category').map { |h|  {"score" => h.css('confidence').first.content, "name" => h.css('name').first.content} }
-      @terms = Nokogiri::XML(xml).css('keyword').map { |h|  {"score" => h.css('confidence').first.content, "name" => h.css('name').first.content} }
+      @categories = Nokogiri::XML(xml).css('category').map { |h|  {"score" => h.at_css('confidence').content, "name" => h.at_css('name').content} }
+      @terms = Nokogiri::XML(xml).css('keyword').map { |h|  {"score" => h.at_css('confidence').content, "name" => h.at_css('name').content} }
     end
     
     def uri

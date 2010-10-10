@@ -6,7 +6,7 @@ require 'open-uri'
 class SemExtractor
   attr_accessor :context, :api_key, :categories, :terms, :geos
 
-  def set(options={})
+  def set(options)
     @context = options[:context]
     @api_key = options[:api_key]
     @type = options[:type]
